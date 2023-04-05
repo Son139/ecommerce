@@ -3,10 +3,10 @@ import cors from "cors";
 import initAPIRoute from "./src/routes";
 import connectDatabase from "./src/config/connectDatabase";
 
-require("dotenv").config;
+require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8088;
 
 app.use(
     cors({
