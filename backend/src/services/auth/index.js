@@ -8,6 +8,11 @@ const hashPassword = async (password) => {
     return hashed;
 };
 
+const comparePassword = async (password, passwordHashed) => {
+    const isMatch = bcrypt.compare(password, passwordHashed);
+    return isMatch;
+};
+
 const genToken = async (data) => {
     const verify = jwt.sign(data, process.env.JWT_ACCESS_TOKEN, {
         expiresIn: "2d",
@@ -15,4 +20,4 @@ const genToken = async (data) => {
     return verify;
 };
 
-export { hashPassword, genToken };
+export { hashPassword, comparePassword, genToken };
