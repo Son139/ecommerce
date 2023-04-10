@@ -1,0 +1,96 @@
+.ant-table-thead {
+    .ant-table-cell {
+        background-color: #2f75b5 !important;
+        text-align: center !important;
+        color: #fff !important;
+    }
+}
+.ant-table-tbody {
+    .ant-table-cell {
+        text-align: center !important;
+    }
+}
+
+.items-input {
+    margin: 12px 0;
+}
+
+.animation-item,
+.animation-item-home {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    transition: 0.3s;
+    .title {
+        padding-top: 10px;
+        color: white;
+        font-size: 20px;
+        white-space: nowrap;
+        position: absolute;
+        bottom: -5px;
+        width: 100%;
+    }
+    @keyframes scaleCircle {
+        0% {
+            transform: scale(1) rotate(0);
+        }
+        50% {
+            transform: scale(1.25) rotate(180deg);
+        }
+        100% {
+            transform: scale(1) rotate(360deg);
+        }
+    }
+    @keyframes rotateDots {
+        0% {
+            transform: rotate(0);
+        }
+        50% {
+            transform: rotate(180deg);
+        }
+        //100% {
+        //  transform: rotate(0deg);
+        //}
+    }
+    .layer {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        right: 0;
+        position: absolute;
+        overflow: hidden;
+    }
+    .layer-1 {
+        z-index: 1;
+    }
+    .layer-2 {
+        z-index: 2;
+    }
+}
+
+.animation-item:hover,
+.animation-item-home:hover {
+    .animation-0 {
+        animation-name: scaleCircle;
+        animation-duration: 4s;
+        animation-iteration-count: 1;
+        //animation-direction: reverse;
+        animation-timing-function: ease;
+        transition: 0.6s;
+    }
+}
+
+.animation-item-home {
+    width: 150px;
+    height: 157.5px;
+    margin: 6px 4px;
+    cursor: pointer;
+    .title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        white-space: nowrap;
+        position: absolute;
+        bottom: -15px;
+        width: 100%;
+    }
+}

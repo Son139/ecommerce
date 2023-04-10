@@ -1,12 +1,14 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import publicRoutes from "./routes/routes";
-import adminRoutes from "./routes/adminRoutes";
+
+import "bootstrap/dist/css/bootstrap-grid.min.css";
+import "bootstrap/dist/css/bootstrap-utilities.min.css";
+import "./assets/style/mixin/_app.scss";
+import AllRoute from "./routes";
 
 function App() {
     return (
         <div className="App">
-            <Router>
+            {/* <Router>
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         const Component = route.component;
@@ -29,7 +31,8 @@ function App() {
                         );
                     })}
                 </Routes>
-            </Router>
+            </Router> */}
+            <AllRoute />
         </div>
     );
 }

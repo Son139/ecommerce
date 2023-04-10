@@ -1,0 +1,18 @@
+.sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    background-color: #001529;
+    padding-top: 20px;
+    transition: all 0.1s linear;
+    z-index: 100;
+    .sidebar-logo {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    &.close {
+        width: 0;
+        overflow: hidden;
+    }
+}

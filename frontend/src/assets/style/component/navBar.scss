@@ -1,0 +1,37 @@
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    height: 50px;
+    left: 250px;
+    width: calc(100% - 250px);
+    transition: all 0.1s linear;
+    padding: 0 24px;
+    color: black;
+    background-color: white;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.2);
+    &.open {
+        width: 100%;
+        left: 0;
+    }
+    .nav-menu {
+        font-size: 1.8rem;
+        color: #030303;
+        cursor: pointer;
+    }
+    .navbar-main {
+        padding-left: 18px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .ant-breadcrumb-link {
+            color: #fff !important;
+            font-weight: 500;
+        }
+        .ant-breadcrumb-separator {
+            color: #fff !important;
+            font-weight: 500;
+        }
+    }
+}
