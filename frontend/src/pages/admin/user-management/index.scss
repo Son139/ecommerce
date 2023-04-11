@@ -1,0 +1,12 @@
+.User-List {
+    padding: 20px;
+    .menu-action {
+        justify-content: space-between;
+        .menu-action-left {
+            gap: 20px;
+        }
+        .menu-action-right {
+            gap: 20px;
+        }
+    }
+}

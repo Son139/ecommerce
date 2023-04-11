@@ -1,6 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
     UserOutlined,
     MenuFoldOutlined,
@@ -14,46 +14,50 @@ import {
 import { Breadcrumb, Dropdown, Space, Avatar, Button, Modal } from "antd";
 import classnames from "classnames";
 import { sidebarClose, sidebarOpen } from "../../redux/actions/sidebarAction";
-// import { pageDashboard } from "../../../routes/routes";
+import { pageDashboard } from "../../routes/routes";
 
 export default function NavBar() {
     const navigate = useNavigate();
+    const location = useLocation();
     //   const user = useRef(JSON.parse(localStorage.getItem("user")));
     const user = useRef(true);
     const [arrName, setArrName] = useState([]);
     const sidebar = useSelector((state) => state.sidebar);
     const dispatch = useDispatch();
 
-    // useEffect(() => {
-    //     getName();
-    // }, [window.location]);
+    useEffect(() => {
+        getName();
+    }, [location.pathname]);
 
+    console.log(arrName);
     const handleMenu = () => {
-        console.log(sidebar);
+        // console.log(sidebar);
         if (sidebar) {
             dispatch(sidebarClose());
         } else {
             dispatch(sidebarOpen());
         }
     };
-    // const getName = () => {
-    //     const paths = window.location.pathname.split("/");
-    //     paths.splice(0, 1, "/");
-    //     if (paths.length >= 2) {
-    //         let child_first = pageDashboard.find((item) => {
-    //             return item.path === "/" + paths[1];
-    //         });
-    //         if (child_first) {
-    //             setArrName([child_first.name]);
-    //             let child_second = child_first?.children?.find((item) => {
-    //                 return item.path === "/" + paths[1] + "/" + paths[2];
-    //             });
-    //             if (child_second) {
-    //                 setArrName((preState) => [...preState, child_second.name]);
-    //             }
-    //         }
-    //     }
-    // };
+
+    const getName = () => {
+        const paths = window.location.pathname.split("/");
+        paths.splice(0, 1, "/");
+        if (paths.length >= 2) {
+            let child_first = pageDashboard.find((item) => {
+                return item.path === "/" + paths[1];
+            });
+            if (child_first) {
+                setArrName([child_first.name]);
+                let child_second = child_first?.children?.find((item) => {
+                    return item.path === "/" + paths[1] + "/" + paths[2];
+                });
+                if (child_second) {
+                    setArrName((preState) => [...preState, child_second.name]);
+                }
+            }
+        }
+    };
+
     const items = [
         {
             key: "1",
