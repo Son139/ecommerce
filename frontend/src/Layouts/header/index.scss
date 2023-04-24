@@ -1,0 +1,23 @@
+.home-container {
+    background-color: #f5f5f5;
+
+    .appHeader {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        box-shadow: 1px 2px 2px #00000033;
+        background-color: white !important;
+        // padding: 0 40px;
+        .menuItem-right {
+            margin-left: 10px;
+        }
+
+        .header-center {
+            display: flex;
+            justify-content: center; /* căn giữa theo chiều ngang */
+            align-items: center; /* căn giữa theo chiều dọc */
+            width: 100%; /* chiều rộng của phần header */
+            position: absolute;
+        }
+    }
+}

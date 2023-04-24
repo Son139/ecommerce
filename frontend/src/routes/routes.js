@@ -6,13 +6,19 @@
 
 import AdminPage from "../pages/admin/adminPage/config";
 import UserManagement from "../pages/admin/user-management/config";
+import ProductManagement from "../pages/admin/product-management/config";
+import Home from "../pages/home/config";
 
-const allPage = [AdminPage, UserManagement];
+import Login from "../pages/auth/login/config";
+
+const allPage = [AdminPage, UserManagement, ProductManagement, Login, Home];
 
 export const privatePage = [];
 export const pageDashboard = [];
 export const publicPage = [];
 
+console.log(publicPage);
+console.log(privatePage);
 allPage.forEach((pageMaster) => {
     const dashBoard = [];
     console.log(pageMaster);

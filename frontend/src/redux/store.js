@@ -1,6 +1,14 @@
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
 import rootReducer from "./reducers/rootReducer";
+import { persistStore } from "redux-persist";
+import thunk from "redux-thunk";
 
-const store = createStore(rootReducer);
+const reduxStore = () => {
+    // TẠO STORE
+    const store = createStore(rootReducer, applyMiddleware(thunk));
+    const persistor = persistStore(store);
 
-export default store;
+    return { store, persistor };
+};
+
+export default reduxStore;

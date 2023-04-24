@@ -67,33 +67,16 @@ export default function AllRoute() {
                 />
             )} */}
                 {routes.publicPage.map(
-                    ({ Component, path, role, isNotSideBar, isNotNavBar }) =>
-                        path !== "/" ? (
-                            <PublicRoute
-                                Component={Component}
-                                path={path}
-                                role={role}
-                                key={path}
-                                isNotNavBar={isNotNavBar}
-                                isNotSideBar={isNotSideBar}
-                            />
-                        ) : (
-                            <Route
-                                path={path}
-                                exact
-                                render={(props) => {
-                                    return (
-                                        <>
-                                            {!isNotSideBar && <SideBar />}
-                                            {!isNotNavBar && <NavBar />}
-                                            <Content {...props}>
-                                                <Component />
-                                            </Content>
-                                        </>
-                                    );
-                                }}
-                            />
-                        ),
+                    ({ Component, path, role, isNotSideBar, isNotNavBar }) => (
+                        <Route
+                            path={path}
+                            element={
+                                // <Content>
+                                <Component />
+                                // </Content>
+                            }
+                        />
+                    ),
                 )}
                 {routes.privatePage.map(
                     ({
